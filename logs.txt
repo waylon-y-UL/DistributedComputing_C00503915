@@ -10,4 +10,136 @@ remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 branch.main.remote=origin
 branch.main.merge=refs/heads/main
 
-asdf
+-----------------------------------
+Last login: Thu Jan 29 10:40:50 on ttys000
+%                                                                                                               
+waylon@Mac ~ % cd ~/.ssh
+waylon@Mac .ssh % ssh -i "DistributedSystem_PrivateKey.pem" ec2-user@ec2-18-217-198-48.us-east-2.compute.amazonaws.com
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.10.20260120:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Thu Jan 29 16:42:58 2026 from 130.70.16.185
+[ec2-user@ip-172-31-12-183 ~]$ ls
+DistributedComputing_C00503915
+
+[ec2-user@ip-172-31-12-183 ~]$ cd DistributedComputing_C00503915/
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ ls
+logs.txt  newFile.txt
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ git branch
+  jan2026
+* main
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ git switch jan2026
+Switched to branch 'jan2026'
+Your branch is up to date with 'origin/jan2026'.
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ ls
+logs.txt
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ date
+Thu Jan 29 22:36:50 UTC 2026
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ mkdir newDirectory
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ ls
+logs.txt  newDirectory
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ cd newDirectory/
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ touch newFile.txt
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ ls
+newFile.txt
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ nano newFile.txt 
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ ls
+newFile.txt
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ uname
+Linux
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ df
+Filesystem       1K-blocks    Used Available Use% Mounted on
+devtmpfs              4096       0      4096   0% /dev
+tmpfs               469420       0    469420   0% /dev/shm
+tmpfs               187768     440    187328   1% /run
+/dev/nvme0n1p1     8310764 1761408   6549356  22% /
+tmpfs               469420       0    469420   0% /tmp
+/dev/nvme0n1p128     10202    1318      8884  13% /boot/efi
+tmpfs                93884       0     93884   0% /run/user/1000
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ du
+4	.
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ git status
+On branch jan2026
+Your branch is up to date with 'origin/jan2026'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	./
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ git add .
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ git status
+On branch jan2026
+Your branch is up to date with 'origin/jan2026'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   newFile.txt
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ git push
+Everything up-to-date
+
+[ec2-user@ip-172-31-12-183 newDirectory]$ cd ~
+
+[ec2-user@ip-172-31-12-183 ~]$ ls
+DistributedComputing_C00503915
+
+[ec2-user@ip-172-31-12-183 ~]$ cd DistributedComputing_C00503915/
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ git status
+On branch jan2026
+Your branch is up to date with 'origin/jan2026'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   newDirectory/newFile.txt
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ git add .
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ git commit -m "new directory and new file"
+[jan2026 e6c378b] new directory and new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newDirectory/newFile.txt
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ git push -u origin jan2026
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 371 bytes | 371.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:waylon-y-UL/DistributedComputing_C00503915.git
+   1215da9..e6c378b  jan2026 -> jan2026
+branch 'jan2026' set up to track 'origin/jan2026'.
+
+[ec2-user@ip-172-31-12-183 DistributedComputing_C00503915]$ 
+
